@@ -46,5 +46,6 @@ class testt {
         Map q1 = new HashMap<>();
         System.out.println(q==q1);
         System.out.println(q = q1);
+
     }
 }

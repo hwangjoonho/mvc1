@@ -48,7 +48,7 @@ public class RequestBodyStringController {
 
     /**
      * HttpEntity: HTTP header, body 정보를 편리하게 조회
-     * - 메시지 바디 정보를 직접 조회(@RequestParam X, @ModelAttribute X)
+     * - 메시지 바디 정보를 직접 조회(@RequestParam X, @ModelAttribute X) = 원래의 html dispatch가 아니라 글자 출력
      * - HttpMessageConverter 사용 -> StringHttpMessageConverter 적용
      * <p>
      * 응답에서도 HttpEntity 사용 가능
@@ -69,7 +69,7 @@ public class RequestBodyStringController {
 
     /**
      * @RequestBody
-     * - 메시지 바디 정보를 직접 조회(@RequestParam X, @ModelAttribute X)
+     * - 메시지 바디 정보를 직접 조회(@RequestParam X, @ModelAttribute X) = 원래의 html dispatch가 아니라 글자 출력
      * - HttpMessageConverter 사용 -> StringHttpMessageConverter 적용
      *
      * @RequestParam : Get방식 QueryString형식으로 넘어온 request => key : value 처리 후 java 변수에 바인딩 : default 값 없음 ( required 속성 필요 )

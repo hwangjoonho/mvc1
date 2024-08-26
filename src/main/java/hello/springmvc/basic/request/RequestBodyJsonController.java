@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * {"username":"hello", "age":20}
@@ -100,6 +104,25 @@ public class RequestBodyJsonController {
     public HelloData requestBodyJsonV5(@RequestBody HelloData data) {
         log.info("username={}, age={}", data.getUsername(), data.getAge());
         return data;
+    }
+
+    @ResponseBody
+    @PostMapping("/request-body-json-v6")       // JSON VALUE 값으로 LIST는 들어갈 수 없다. <- toString 적용 안딤
+    public Map<String, Object> requestBodyJsonV6(@RequestBody HelloData data) {
+//    public List<Object> requestBodyJsonV6(@RequestBody HelloData data) {
+        Map<String, Object> dd = new HashMap<>();
+        dd.put("1",data);
+        dd.put("2", "everty");
+//        List<Object> dl = new ArrayList<>();
+//        dl.add(dd);
+//        dl.add(data);
+//        dl.add("test");
+
+//        dd.put("3", dl);
+        log.info("dd={}", dd);
+//        log.info("dl={}", dl);
+        log.info("username={}, age={}", data.getUsername(), data.getAge());
+        return dd;
     }
 
 
